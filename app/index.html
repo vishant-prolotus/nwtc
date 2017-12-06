@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#0095eb" />
+    <title>Embark</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="site.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        $(function() {
+            $(".form-popup-trigger").on("click", function() {
+                var formPopup = $(this).next(".form-popup");
+                $(".form-popup").fadeOut();
+                $(".fs-overlay").fadeIn();
+                $(formPopup).fadeIn();
+            });
+            $(".fs-overlay, .form-popup .form-popup-close").on("click", function() {
+                $(".fs-overlay").fadeOut();
+                $(".form-popup").fadeOut();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header class="site-header clearfix">
+        <div class="wrapper">
+            <div class="pull-left">Welcome, <strong>Aditya</strong></div>
+            <div class="pull-right logout"><a href="/logout">Logout</a></div>
+        </div>
+    </header>
+    <div class="block-form has-two-columns">
+        <div class="wrapper">
+            <div id="deployToken" class="block-form-group">
+                <i class="form-group-icon"><img src="images/deploy-token.svg" alt="Deploy new Token" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Deploy new Token</h3>
+                </div>
+                <div class="form-popup">
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                       <div class="custom-form-group">
+                        <input class="numToken" placeholder="enter token supply" />
+                       </div>
+                       <div class="custom-form-group">
+                        <input class="nameToken" placeholder="enter token name" />
+                       </div>
+                       <div class="custom-form-group">
+                        <input class="symbolToken" placeholder="enter token symbol" />
+                       </div>
+                        <div class="custom-form-group">
+                            <input class="decimalToken" placeholder="enter decimal value" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Deploy</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+                </div>
+            </div>
+           <div id="useToken" class="block-form-group">
+                <i class="form-group-icon"><img src="images/token-address.svg" alt="Token Address" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Token Address</h3>
+                </div>
+                <div class="form-popup">
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input placeholder="enter token address" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Use this Token</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="queryBalance" class="block-form-group">
+                <i class="form-group-icon"><img src="images/query-balance-icon.svg" alt="Query Balance" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Query Balance</h3>
+                </div>
+                <div class="form-popup">
+
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input placeholder="enter account address: e.g 0x123" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Query</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="transfer" class="block-form-group">
+                <i class="form-group-icon"><img src="images/transfer-tokens.svg" alt="transfer" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Transfer Tokens</h3>
+                </div>
+                <div class="form-popup">
+
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input class="addressTransfer" placeholder="enter account address: e.g 0x123" />
+                        </div>
+                        <div class="custom-form-group">
+                            <input class="numTransfer" placeholder="enter amount to transfer" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Transfer</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div id="mintToken" class="block-form-group">
+                <i class="form-group-icon"><img src="images/mint-token.svg" alt="Mint Tokens" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Mint Tokens</h3>
+                </div>
+                <div class="form-popup">
+
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input class="addressMint" placeholder="enter target account address: e.g 0x123" />
+                        </div>
+                        <div class="custom-form-group">
+                            <input class="numMint" placeholder="enter amount to mint" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Mint</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+
+                </div>
+            </div>
+           <div id="freezeAccount" class="block-form-group">
+                <i class="form-group-icon"><img src="images/freeze-account.svg" alt="Freeze Account" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Freeze Account</h3>
+                </div>
+                <div class="form-popup">
+
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input class="addressFreeze" placeholder="enter target account address: e.g 0x123" />
+                        </div>
+                        <div class="custom-form-group">
+                            <input class="numFreeze" placeholder="enter 1/0" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Freeze</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="freezeAccountEmergency" class="block-form-group">
+                <i class="form-group-icon"><img src="images/freeze-all-account.svg" alt="Freeze all Accounts" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Freeze all Accounts</h3>
+                </div>
+                <div class="form-popup">
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input class="numEm" placeholder="enter 1/0" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Freeze</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--<div id="buy" class="block-form-group">
+                <i class="form-group-icon buy-token-icon"><img src="images/buy-token.svg" width="48" alt="Buy Tokens" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Buy Tokens</h3>
+                </div>
+                <div class="form-popup">
+
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+
+                        <div class="custom-form-group">
+                            <input class="amountBuy" placeholder="enter amount to buy in wei" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Buy</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+                </div>
+            </div>-->
+
+           
+            <div id="setPrices" class="block-form-group">
+                <i class="form-group-icon set-prices-token"><img src="images/set-prices.svg" width="33" alt="Set Price" /></i>
+                <div class="form-group-text form-popup-trigger">
+                    <h3 class="heading">Set Price</h3>
+                </div>
+                <div class="form-popup">
+
+                    <div class="custom-form">
+                        <h2 class="custom-form-heading">Enter Details <a class="form-popup-close back-btn">Close</a></h2>
+                        <div class="custom-form-group">
+                            <input class="sellprice" placeholder="enter sell price in wei" />
+                        </div>
+                        <div class="custom-form-group">
+                            <input class="buyprice" placeholder="enter buy price in wei" />
+                        </div>
+                        <div class="custom-form-group">
+                            <button class="form-group-btn">Set Price</button>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tabbed-forms clearfix">
+                <div id="owner" class="form-item">
+                    <button>Owner</button>
+                    <div class="result"></div>
+                </div>
+                <div id="supply" class="form-item">
+                    <button>Supply</button>
+                    <div class="result"></div>
+                </div>
+                
+                <div id="readSellToken" class="form-item">
+                    <button>Token Sold</button>
+                    <div class="result"></div>
+                </div>
+                <div id="readAllUsers" class="form-item">
+                    <button>Read all users</button>
+                    <div class="result"></div>
+                </div>
+                 <div id="readAllFrzAcc" class="form-item">
+                    <button>Read all freeze accounts</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="fs-overlay"></div>
+    
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div>Copyrights &copy; 2017. All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

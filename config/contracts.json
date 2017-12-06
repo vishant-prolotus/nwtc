@@ -1,0 +1,37 @@
+{
+  "default": {
+    "gas": "auto",
+    "versions": {
+      "web3.js": "1.0.0-beta",
+      "solc": "0.4.17"
+    },
+    "deployment": {
+      "host": "localhost",
+      "port": 8545,
+      "type": "rpc"
+    },
+    "dappConnection": [
+      "$WEB3",
+      "http://localhost:8545"
+    ],
+    
+    "contracts": {
+      "TokenNWTC": {
+        "deploy":false
+      },
+      "owned": {
+        "deploy":false
+      },
+      "TokenERC20": {
+        "deploy":false
+      },
+      "utility": {
+        "deploy":false
+      },
+      "tokenRecipient": {
+        "deploy":false
+      }
+
+    }
+  }
+}

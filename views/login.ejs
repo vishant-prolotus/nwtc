@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="login-screen">
+      <div class="custom-form">
+        <h2 class="custom-form-heading">Login</h2>
+        <p class="custom-form-description">Enter accounts details</p>
+        <div class="custom-form-group">
+          <input id="email" type="text" placeholder="Your Email" class="form-group-control">
+        </div>
+        <div class="custom-form-group">
+          <input id="password" type="password" placeholder="Password" class="form-group-control">
+        </div>
+        <div class="custom-form-group form-group-rememberme">
+          <!--<label for="rememberMe">
+            <input id="rememberMe" type="checkbox"> Remember me
+          </label>-->
+        </div>
+        <div class="custom-form-group">
+          <button id="login" class="form-group-btn">Login</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      $("#login").click(function() {
+      var data = {
+        email:$('#email').val(),
+        password:$('#password').val()
+      }
+      $.post( "login",data,function(res) {
+        if(res.status==200) {
+          window.location.href = "/dappp";
+        }else{
+          window.alert('Invalid Credentials');
+        }
+      });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "contract_name": "utility",
+  "code": "60606040523415600b57fe5b5b60338060196000396000f30060606040525bfe00a165627a7a7230582039cd10e8106132a215d7d93e085ce630148de3b6f4ecba3c815728e2974560fc0029",
+  "runtime_bytecode": "60606040525bfe00a165627a7a7230582039cd10e8106132a215d7d93e085ce630148de3b6f4ecba3c815728e2974560fc0029",
+  "real_runtime_bytecode": "60606040525bfe00a165627a7a7230582039cd10e8106132a215d7d93e085ce630148de3b6f4ecba3c815728e2974560fc0029",
+  "swarm_hash": "39cd10e8106132a215d7d93e085ce630148de3b6f4ecba3c815728e2974560fc",
+  "gas_estimates": {
+    "creation": [
+      62,
+      10200
+    ],
+    "external": {},
+    "internal": {
+      "calculateEthers(uint256,uint256,uint256)": null,
+      "calculateTokens(uint256,uint256,uint256)": null,
+      "decimalAdjustment(uint256,uint256)": null
+    }
+  },
+  "function_hashes": {},
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "val1",
+          "type": "uint256"
+        }
+      ],
+      "name": "check1",
+      "type": "event"
+    }
+  ]
+}

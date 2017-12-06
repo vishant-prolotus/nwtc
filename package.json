@@ -1,0 +1,25 @@
+{
+  "name": "app_name",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "embark": "^2.5.2",
+    "mocha": "^2.2.5",
+    "ethereumjs-testrpc": "latest",
+    "express": "latest"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "pug": "^2.0.0-rc.4"
+  }
+}
