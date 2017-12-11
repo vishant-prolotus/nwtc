@@ -1,28 +1,2 @@
 {
-  "0xb6cfeab83614da04c03db0fb8a6787a45d0be8d576fcc6f8f457a5a816d22ab3": {
-    "contracts": {
-      "0x4af0c9d22a2034853aea9d3aeef0358d8066a78de903588fabd8d5f3d0e12428": {
-        "name": "Coin",
-        "address": "0x77feb35fc0aafa8cbe3de34069ae5ed325c10435"
-      },
-      "0x306d9d2e2bc27e571bc28e484aac3a75e262d968ea9d51b56547ad36d6c91d89": {
-        "name": "admined",
-        "address": "0x95d41e9f19901d28405a84fb0094e3ff19e33763"
-      }
-    },
-    "name": "development"
-  },
-  "0x31c841b668fdd55a5b1d08706f9b6fa307e3deaf1679c8b3dd0256570ee532f5": {
-    "contracts": {
-      "0x5b5716181c02a71f80aac554f459eabc771d3e7647480940de62b1e8edbe5d29": {
-        "name": "Coin",
-        "address": "0x7be7694dd6d8b524710e480d1db727140adde8ca"
-      },
-      "0xf9c0beeff2031ebca95e9029ce372fd4d041eea788d11316faf4ff82ab8b006b": {
-        "name": "admined",
-        "address": "0xd648e3ce1991c8370ac1f3a2bf2b7aa095700cba"
-      }
-    },
-    "name": "development"
-  }
 }

@@ -1,32 +1,11 @@
 $(document).ready(function() {
   var currentToken;
+  var address = "0xd72980299c421ae2d53e56fb84339f61627482df";
+  currentToken = new EmbarkJS.Contract({
+    abi: TokenNWTC.abi,
+    address: address
+  });
   
-
-    $("#deployToken button").click(function() {
-  var num1 = $('#deployToken .numToken').val();
-  var num2 = $('#deployToken .nameToken').val();
-  var num3 = $('#deployToken .symbolToken').val();
-  var num4 = $('#deployToken .decimalToken').val();
-      console.log(num1,num2,num3,num4);
-      TokenNWTC.deploy([num1,num2,num3,num4]).then(function(deployedToken) {
-        console.log(2);
-        currentToken = deployedToken;
-        console.log(3);
-        console.log(currentToken);
-        console.log(4);
-        $("#deployToken .result").append("<br>Token deployed with address: " + deployedToken.address);
-      });
-  });
-
-  $("#useToken button").click(function() {
-      var address = currentToken.address;
-      currentToken = new EmbarkJS.Contract({
-        abi: TokenNWTC.abi,
-        address: address
-      });
-  });
-
-
   web3.eth.getAccounts(function(err, accounts) {
       $('#queryBalance input').val(accounts[0]);
     });
